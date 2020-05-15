@@ -28,7 +28,7 @@
       <div class="col-xs-12">
         <h2>Mes appareils</h2>
         <ul class="list-group">
-          <app-appliance applianceName="Machine"></app-appliance>
+          <app-appliance *ngFor="let object of appliance" [applianceName]="object.name" [applianceStatus] ="object.status" ></app-appliance>
         </ul>
         <button class="btn btn-success" [disabled]="!isAuth" (click)="onAllumer()" >Tout allumer </button>
       </div>

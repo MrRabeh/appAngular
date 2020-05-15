@@ -8,6 +8,23 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Tarik';
   isAuth = false;
+  applianceName: string;
+  applianceStatus: string;
+
+  appliance = [
+      {
+        name: 'Routeur',
+        status: 'éteint'
+      },
+      {
+        name: 'Ordinateur',
+        status: 'allumé'
+      },
+      {
+        name: 'Switch',
+        status: 'éteint'
+      }
+    ];
 
   constructor(){
       setTimeout(

@@ -8,7 +8,7 @@ import { Component, Input,OnInit } from '@angular/core';
 export class ApplianceComponent implements OnInit {
 
   @Input() applianceName: string;
-  applienceStatus: string='éteint';
+  @Input() applianceStatus: string;
 
   constructor() { }
 
@@ -16,7 +16,7 @@ export class ApplianceComponent implements OnInit {
   }
 
   getstatus(){
-  return this.applienceStatus;
+  return this.applianceStatus;
   }
 
 }
