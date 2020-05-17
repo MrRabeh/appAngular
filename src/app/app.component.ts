@@ -1,40 +1,31 @@
-import { Component } from '@angular/core';
+import { Component ,OnInit} from '@angular/core';
+import { ApplianceService} from './services/appliance.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+
+export class AppComponent implements OnInit {
+
   title = 'Tarik';
   isAuth = false;
+
   applianceName: string;
   applianceStatus: string;
+  appliance: any[];
 
-  appliance = [
-      {
-        name: 'Routeur',
-        status: 'éteint'
-      },
-      {
-        name: 'Ordinateur',
-        status: 'allumé'
-      },
-      {
-        name: 'Switch',
-        status: 'éteint'
-      }
-    ];
-
-  constructor(){
-      setTimeout(
-        () => {
-          this.isAuth = true;
-        }, 4000
-      );
+  constructor(private applianceservice:ApplianceService){
+  }
+  ngOnInit(){
+    this.appliance = this.applianceservice.appliances;
   }
 
-  onAllumer() {
-      console.log('On allume tout !');
+  onallumer(){
+   this.applianceservice.onswtichONall();
+  }
+  onenttendre(){
+   this.applianceservice.onswtichOFFall();
   }
 }
