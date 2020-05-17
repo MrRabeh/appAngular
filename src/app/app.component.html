@@ -28,9 +28,11 @@
       <div class="col-xs-12">
         <h2>Mes appareils</h2>
         <ul class="list-group">
-          <app-appliance *ngFor="let object of appliance" [applianceName]="object.name" [applianceStatus] ="object.status" ></app-appliance>
+          <app-appliance *ngFor="let object of appliance; let i = index"
+           [applianceName]="object.name" [applianceStatus] ="object.status" [indexappliance]="i" ></app-appliance>
         </ul>
-        <button class="btn btn-success" [disabled]="!isAuth" (click)="onAllumer()" >Tout allumer </button>
+        <button class="btn btn-success" (click)="onallumer()">ON ALL </button>
+        <button class="btn btn-danger" (click)="onenttendre()">OFF ALL </button>
       </div>
     </div>
   </div>
